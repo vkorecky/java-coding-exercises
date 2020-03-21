@@ -1,5 +1,7 @@
 package org.korecky.interview;
 
+import java.util.Arrays;
+
 public class AssignNumbersMinesweeper {
 
 //	Assign Numbers in Minesweeper (Java)
@@ -24,6 +26,8 @@ public class AssignNumbersMinesweeper {
 
 	public static int[][] mineSweeper(int[][] bombs, int numRows, int numCols) {
 		int[][] field = new int[numRows][numCols];
+		for (int[] row: field)
+			Arrays.fill(row, 0);
 		return field;
 	}
 }
