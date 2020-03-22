@@ -32,7 +32,22 @@ public class AssignNumbersMinesweeper {
 
 		// Fill bombs
 		for (int[] bomb : bombs) {
-			field[bomb[0]][bomb[1]] = -1;
+			int bombX = bomb[0];
+			int bombY = bomb[1];
+			field[bombX][bombY] = -1;
+			for (int x = bombX - 1; x <= bombX + 1; x++) {
+				if ((x >= 0) && (x < numRows)) {
+					for (int y = bombY - 1; y <= bombY + 1; y++) {
+						if ((y >= 0) && (y < numCols)) {
+							int value = field[x][y];
+							if (value != -1) {
+								value++;
+								field[x][y] = value;
+							}
+						}
+					}
+				}
+			}
 		}
 		return field;
 	}
