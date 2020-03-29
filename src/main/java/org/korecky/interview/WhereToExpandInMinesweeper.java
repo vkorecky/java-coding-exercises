@@ -1,7 +1,5 @@
 package org.korecky.interview;
 
-import java.util.ArrayDeque;
-
 public class WhereToExpandInMinesweeper {
 
 	// Find Where to Expand in Minesweeper
@@ -42,6 +40,20 @@ public class WhereToExpandInMinesweeper {
 	// [-2, -2, 1, -1]]
 
 	public static int[][] click(int[][] field, int numRows, int numCols, int givenI, int givenJ) {
+		if (field[givenI][givenJ] == 0) {
+			field[givenI][givenJ] = -2;
+			for (int i = givenI - 1; i <= givenI + 1; i++) {
+				if ((i >= 0) && (i < numRows)) {
+					for (int j = givenJ - 1; j <= givenJ + 1; j++) {
+						if ((j >= 0) && (j < numCols)) {
+							if (field[i][j] == 0) {
+								field = click(field, numRows, numCols, i, j);
+							}
+						}
+					}
+				}
+			}
+		}
 		return field;
 	}
 }
