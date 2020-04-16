@@ -1,2 +1,2 @@
 # java-coding-exercises
-Code Exercises from an Udemy Course "[11 Essential Coding Interview Questions + Coding Exercises!](https://www.udemy.com/course/11-essential-coding-interview-questions/)"
+Code Exercises from an Udemy Course "[Apache Kafka Series - Learn Apache Kafka for Beginners v2](https://www.udemy.com/course/apache-kafka/)"
