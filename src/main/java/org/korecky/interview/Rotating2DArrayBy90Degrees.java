@@ -24,6 +24,23 @@ public class Rotating2DArrayBy90Degrees {
 	}
 
 	public static int[][] rotateInPlace(int[][] a, int n) {
+		for (int column=0; column<n; column++){
+			int i = 0;
+			int j = column;
+
+			boolean stop = false;
+			while (!stop) {
+				int iNew = j;
+				int jNew = (n-1) - i;
+				a[iNew][jNew] = a[i][j];
+				i = iNew;
+				j = jNew;
+
+				if ((i == 0) && (j == column)){
+					stop = true;
+				}
+			}
+		}
 		return a;
 	}
 }
