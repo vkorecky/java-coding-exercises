@@ -33,9 +33,10 @@ public class Rotating2DArrayBy90Degrees {
 				int iNew = j;
 				int jNew = (n-1) - i;
 				a[iNew][jNew] = a[i][j];
+
 				i = iNew;
 				j = jNew;
-
+				
 				if ((i == 0) && (j == column)){
 					stop = true;
 				}
