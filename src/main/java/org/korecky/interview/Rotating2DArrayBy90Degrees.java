@@ -27,20 +27,30 @@ public class Rotating2DArrayBy90Degrees {
 	}
 
 	public static int[][] rotateInPlace(int[][] a, int n) {
-		for (int column=0; column<n; column++){
-			int i = 0;
-			int j = column;
+		int x = n/2;
+		int y = x;
+		if (x != (float)n/2) {
+			x++;
+		}
+		for (int row=0; row<y; row++) {
+			for (int column = 0; column < x; column++) {
+				int i = row;
+				int j = column;
 
-			boolean stop = false;
-			while (!stop) {
-				Pair<Integer, Integer> newCoordinates = calculateNewCoordinates(i, j, n);
-				a[newCoordinates.getValue0()][newCoordinates.getValue1()] = a[i][j];
+				boolean stop = false;
+				int newValue = a[i][j];
+				while (!stop) {
+					Pair<Integer, Integer> newCoordinates = calculateNewCoordinates(i, j, n);
+					int originalValue = a[newCoordinates.getValue0()][newCoordinates.getValue1()];
+					a[newCoordinates.getValue0()][newCoordinates.getValue1()] = newValue;
 
-				i = newCoordinates.getValue0();
-				j = newCoordinates.getValue1();
-				
-				if ((i == 0) && (j == column)){
-					stop = true;
+					i = newCoordinates.getValue0();
+					j = newCoordinates.getValue1();
+					newValue = originalValue;
+
+					if ((i == row) && (j == column)) {
+						stop = true;
+					}
 				}
 			}
 		}

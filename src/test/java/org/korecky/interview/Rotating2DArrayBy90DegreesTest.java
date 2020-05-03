@@ -25,13 +25,13 @@ public class Rotating2DArrayBy90DegreesTest {
 
 	@Test
 	public void rotate() {
-		assertArrayEquals(Rotating2DArrayBy90Degrees.rotate(a1, 3), r1);
-		assertArrayEquals(Rotating2DArrayBy90Degrees.rotate(a2, 4), r2);
+		assertArrayEquals(r1, Rotating2DArrayBy90Degrees.rotate(a1, 3));
+		assertArrayEquals(r2, Rotating2DArrayBy90Degrees.rotate(a2, 4));
 	}
 
 	@Test
 	public void rotateInPlace() {
-		assertArrayEquals(Rotating2DArrayBy90Degrees.rotate(a1, 3), r1);
-		assertArrayEquals(Rotating2DArrayBy90Degrees.rotate(a2, 4), r2);
+		assertArrayEquals(r1, Rotating2DArrayBy90Degrees.rotateInPlace(a1, 3));
+		assertArrayEquals(r2, Rotating2DArrayBy90Degrees.rotateInPlace(a2, 4));
 	}
 }
