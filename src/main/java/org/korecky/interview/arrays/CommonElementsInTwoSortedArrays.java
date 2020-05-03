@@ -1,8 +1,7 @@
-package org.korecky.interview;
+package org.korecky.interview.arrays;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 // Common Elements in Two Sorted Arrays (Java)
 // Write a function that returns the common elements (as an array)&nbsp;between two&nbsp;sorted&nbsp;arrays of integers (ascending order).
@@ -16,7 +15,7 @@ public class CommonElementsInTwoSortedArrays {
 		int lastNumIndex = 0;
 		for (int firstArrayNum : array1) {
 			if (!resultInArray.contains(firstArrayNum)) {
-				for (int i=lastNumIndex; i<array2.length; i++) {
+				for (int i = lastNumIndex; i < array2.length; i++) {
 					Integer secArrayNum = array2[i];
 					if (firstArrayNum == secArrayNum) {
 						resultInArray.add(firstArrayNum);

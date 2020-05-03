@@ -1,4 +1,4 @@
-package org.korecky.interview;
+package org.korecky.interview.arrays;
 
 public class IsOneArrayRotationOfAnother {
 
@@ -12,7 +12,7 @@ public class IsOneArrayRotationOfAnother {
 			return false;
 		int offset = -1;
 		int startingNum = array1[0];
-		for (int i=0; i<array2.length; i++) {
+		for (int i = 0; i < array2.length; i++) {
 			if (array2[i] == startingNum) {
 				offset = i;
 				break;
@@ -22,7 +22,7 @@ public class IsOneArrayRotationOfAnother {
 			return false;
 		}
 
-		for (int i=0; i<array1.length; i++){
+		for (int i = 0; i < array1.length; i++) {
 			int secondArrayIndex = (i + offset) % array1.length;
 			if (array1[i] != array2[secondArrayIndex]) {
 				return false;

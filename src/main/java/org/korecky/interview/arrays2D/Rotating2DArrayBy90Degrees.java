@@ -1,4 +1,4 @@
-package org.korecky.interview;
+package org.korecky.interview.arrays2D;
 
 import org.javatuples.Pair;
 
@@ -17,8 +17,8 @@ public class Rotating2DArrayBy90Degrees {
 
 	public static int[][] rotate(int[][] a, int n) {
 		int[][] rotated = new int[n][n];
-		for (int i=0; i<n; i++){
-			for (int j=0; j<n; j++){
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
 				Pair<Integer, Integer> newCoordinates = calculateNewCoordinates(i, j, n);
 				rotated[newCoordinates.getValue0()][newCoordinates.getValue1()] = a[i][j];
 			}
@@ -27,12 +27,12 @@ public class Rotating2DArrayBy90Degrees {
 	}
 
 	public static int[][] rotateInPlace(int[][] a, int n) {
-		int x = n/2;
+		int x = n / 2;
 		int y = x;
-		if (x != (float)n/2) {
+		if (x != (float) n / 2) {
 			x++;
 		}
-		for (int row=0; row<y; row++) {
+		for (int row = 0; row < y; row++) {
 			for (int column = 0; column < x; column++) {
 				int i = row;
 				int j = column;
@@ -58,6 +58,6 @@ public class Rotating2DArrayBy90Degrees {
 	}
 
 	private static Pair<Integer, Integer> calculateNewCoordinates(int i, int j, int n) {
-		return new Pair<>(j, (n-1)-i);
+		return new Pair<>(j, (n - 1) - i);
 	}
 }
