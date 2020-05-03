@@ -1,5 +1,7 @@
 package org.korecky.interview;
 
+import org.javatuples.Pair;
+
 public class Rotating2DArrayBy90Degrees {
 
 	// Rotating a 2D Array by 90 Degrees
@@ -17,31 +19,45 @@ public class Rotating2DArrayBy90Degrees {
 		int[][] rotated = new int[n][n];
 		for (int i=0; i<n; i++){
 			for (int j=0; j<n; j++){
-				rotated[j][(n-1)-i] = a[i][j];
+				Pair<Integer, Integer> newCoordinates = calculateNewCoordinates(i, j, n);
+				rotated[newCoordinates.getValue0()][newCoordinates.getValue1()] = a[i][j];
 			}
 		}
 		return rotated;
 	}
 
 	public static int[][] rotateInPlace(int[][] a, int n) {
-		for (int column=0; column<n; column++){
-			int i = 0;
-			int j = column;
+		int x = n/2;
+		int y = x;
+		if (x != (float)n/2) {
+			x++;
+		}
+		for (int row=0; row<y; row++) {
+			for (int column = 0; column < x; column++) {
+				int i = row;
+				int j = column;
 
-			boolean stop = false;
-			while (!stop) {
-				int iNew = j;
-				int jNew = (n-1) - i;
-				a[iNew][jNew] = a[i][j];
+				boolean stop = false;
+				int newValue = a[i][j];
+				while (!stop) {
+					Pair<Integer, Integer> newCoordinates = calculateNewCoordinates(i, j, n);
+					int originalValue = a[newCoordinates.getValue0()][newCoordinates.getValue1()];
+					a[newCoordinates.getValue0()][newCoordinates.getValue1()] = newValue;
 
-				i = iNew;
-				j = jNew;
-				
-				if ((i == 0) && (j == column)){
-					stop = true;
+					i = newCoordinates.getValue0();
+					j = newCoordinates.getValue1();
+					newValue = originalValue;
+
+					if ((i == row) && (j == column)) {
+						stop = true;
+					}
 				}
 			}
 		}
 		return a;
+	}
+
+	private static Pair<Integer, Integer> calculateNewCoordinates(int i, int j, int n) {
+		return new Pair<>(j, (n-1)-i);
 	}
 }
