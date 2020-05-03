@@ -1,4 +1,4 @@
-package org.korecky.interview;
+package org.korecky.interview.arrays;
 
 import java.util.HashMap;
 
@@ -14,14 +14,14 @@ public class MostFrequentlyOccurringItemInArray {
 		Integer maxValue = null;
 		HashMap<Integer, Integer> intCounts = new HashMap<>();
 		for (Integer number : givenArray) {
-			if (intCounts.containsKey(number)){
+			if (intCounts.containsKey(number)) {
 				intCounts.replace(number, intCounts.get(number) + 1);
 			} else {
 				intCounts.put(number, 1);
 			}
 		}
 
-		for (Integer number : intCounts.keySet()){
+		for (Integer number : intCounts.keySet()) {
 			if ((maxValue == null) || (maxValue < intCounts.get(number))) {
 				maxValue = intCounts.get(number);
 				maxItem = number;

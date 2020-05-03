@@ -1,4 +1,4 @@
-package org.korecky.interview;
+package org.korecky.interview.strings;
 
 public class OneAwayStrings {
 
@@ -33,11 +33,11 @@ public class OneAwayStrings {
 			if (firstChar != secondChar) {
 				if (operationApplied)
 					return false;
-				if (secondChar == longerArray[i+1]) {
+				if (secondChar == longerArray[i + 1]) {
 					// add/delete operation
 					operationApplied = true;
 					offset = 1;
-				} else if (longerArray[i+1] == shorterArray[i+1]){
+				} else if (longerArray[i + 1] == shorterArray[i + 1]) {
 					operationApplied = true;
 				} else
 					return false;

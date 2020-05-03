@@ -1,4 +1,4 @@
-package org.korecky.interview;
+package org.korecky.interview.arrays2D;
 
 import java.util.Arrays;
 

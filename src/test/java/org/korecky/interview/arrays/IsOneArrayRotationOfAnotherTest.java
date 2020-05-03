@@ -1,7 +1,9 @@
-package org.korecky.interview;
+package org.korecky.interview.arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class IsOneArrayRotationOfAnotherTest {
@@ -11,7 +13,7 @@ class IsOneArrayRotationOfAnotherTest {
 		int[] array1 = { 1, 2, 3, 4, 5, 6, 7 };
 		int[] array2a = { 4, 5, 6, 7, 8, 1, 2, 3 };
 		// isRotation(array1, array2a) should return false.
-		assertFalse(IsOneArrayRotationOfAnother.isRotation(array1, array2a));
+		Assertions.assertFalse(IsOneArrayRotationOfAnother.isRotation(array1, array2a));
 
 		int[] array2b = { 4, 5, 6, 7, 1, 2, 3 };
 		// isRotation(array1, array2b) should return true.

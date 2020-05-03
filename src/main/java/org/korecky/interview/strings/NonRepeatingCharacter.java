@@ -1,4 +1,4 @@
-package org.korecky.interview;
+package org.korecky.interview.strings;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

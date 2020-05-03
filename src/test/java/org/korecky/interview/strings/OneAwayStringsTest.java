@@ -1,14 +1,16 @@
-package org.korecky.interview;
+package org.korecky.interview.strings;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class OneAwayStringsTest {
 
 	@Test
 	void isOneAway() {
-		assertTrue(OneAwayStrings.isOneAway("abcde", "abcd"));  // should return true
+		Assertions.assertTrue(OneAwayStrings.isOneAway("abcde", "abcd"));  // should return true
 		assertTrue(OneAwayStrings.isOneAway("abde", "abcde"));  // should return true
 		assertTrue(OneAwayStrings.isOneAway("a", "a"));  // should return true
 		assertTrue(OneAwayStrings.isOneAway("abcdef", "abqdef"));  // should return true
