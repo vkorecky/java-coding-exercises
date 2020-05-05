@@ -14,6 +14,20 @@ public class NthElementOfLinkedList {
 	// If the given n is larger than the number of nodes in the list, return null / None.
 
 	public static Node nthFromLast(Node head, int n) {
-		return head;
+		Node right = head;
+		Node left = head;
+
+		for (int i = 0; i < n; i++) {
+			if (right == null)
+				return null;
+			right = right.getChild();
+		}
+
+		while (right != null) {
+			right = right.getChild();
+			left = left.getChild();
+		}
+
+		return left;
 	}
 }

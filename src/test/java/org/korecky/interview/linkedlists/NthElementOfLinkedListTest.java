@@ -24,10 +24,10 @@ class NthElementOfLinkedListTest {
 		Node head2 = current2;
 
 
-		assertEquals(1, NthElementOfLinkedList.nthFromLast(head, 1));
-		assertEquals(5, NthElementOfLinkedList.nthFromLast(head, 5));
-		assertEquals(3, NthElementOfLinkedList.nthFromLast(head2, 2));
-		assertEquals(1, NthElementOfLinkedList.nthFromLast(head2, 4));
+		assertEquals(1, NthElementOfLinkedList.nthFromLast(head, 1).getValue());
+		assertEquals(5, NthElementOfLinkedList.nthFromLast(head, 5).getValue());
+		assertEquals(3, NthElementOfLinkedList.nthFromLast(head2, 2).getValue());
+		assertEquals(1, NthElementOfLinkedList.nthFromLast(head2, 4).getValue());
 		assertEquals(null, NthElementOfLinkedList.nthFromLast(null, 5));
 		assertEquals(null, NthElementOfLinkedList.nthFromLast(null, 1));
 	}
