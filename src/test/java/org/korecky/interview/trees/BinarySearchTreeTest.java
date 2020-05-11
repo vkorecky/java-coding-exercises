@@ -105,8 +105,8 @@ class BinarySearchTreeTest {
 		}
 		for(Integer key : mapping.keySet()) {
 			int[] value = mapping.get(key);
-			nodes.get(key).left = nodes.get(value[0]);
-			nodes.get(key).right = nodes.get(value[1]);
+			nodes.get(key).setLeft(nodes.get(value[0]));
+			nodes.get(key).setRight(nodes.get(value[1]));
 		}
 		return head;
 	}
