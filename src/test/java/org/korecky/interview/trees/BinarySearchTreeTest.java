@@ -22,7 +22,7 @@ class BinarySearchTreeTest {
 		mapping1.put(1, childrenB);
 		mapping1.put(2, childrenC);
 
-		TreeNode head1 = createTree(mapping1, 0);
+		TreeNode head1 = TreeHelper.createTree(mapping1, 0);
 		// This tree is:
 		// head1 = 0
 		//        / \
@@ -39,7 +39,7 @@ class BinarySearchTreeTest {
 		mapping2.put(1, childrenE);
 		mapping2.put(4, childrenF);
 
-		TreeNode head2 = createTree(mapping2, 3);
+		TreeNode head2 = TreeHelper.createTree(mapping2, 3);
 		// This tree is:
 		//  head2 = 3
 		//        /   \
@@ -56,7 +56,7 @@ class BinarySearchTreeTest {
 		mapping3.put(1, childrenH);
 		mapping3.put(5, childrenI);
 
-		TreeNode head3 = createTree(mapping3, 3);
+		TreeNode head3 = TreeHelper.createTree(mapping3, 3);
 		// This tree is:
 		//  head3 = 3
 		//        /   \
@@ -72,7 +72,7 @@ class BinarySearchTreeTest {
 		mapping4.put(3, childrenJ);
 		mapping4.put(1, childrenK);
 
-		TreeNode head4 = createTree(mapping4, 3);
+		TreeNode head4 = TreeHelper.createTree(mapping4, 3);
 		// This tree is:
 		//  head4 = 3
 		//        /   \
@@ -84,30 +84,5 @@ class BinarySearchTreeTest {
 		assertEquals(false, BinarySearchTree.isBST(head2));
 		assertEquals(true, BinarySearchTree.isBST(head3));
 		assertEquals(false, BinarySearchTree.isBST(head4));
-	}
-
-	// A function for creating a tree.
-	// Input:
-	// - mapping: a node-to-node mapping that shows how the tree should be constructed
-	// - headValue: the value that will be used for the head ndoe
-	// Output:
-	// - The head node of the resulting tree
-	private static TreeNode createTree(HashMap<Integer, int[]> mapping, int headValue) {
-		TreeNode head = new TreeNode(headValue, null, null);
-		HashMap<Integer, TreeNode> nodes = new HashMap<Integer, TreeNode>();
-		nodes.put(headValue, head);
-		for(Integer key : mapping.keySet()) {
-			int[] value = mapping.get(key);
-			TreeNode leftChild = new TreeNode(value[0], null, null);
-			TreeNode rightChild = new TreeNode(value[1], null, null);
-			nodes.put(value[0], leftChild);
-			nodes.put(value[1], rightChild);
-		}
-		for(Integer key : mapping.keySet()) {
-			int[] value = mapping.get(key);
-			nodes.get(key).setLeft(nodes.get(value[0]));
-			nodes.get(key).setRight(nodes.get(value[1]));
-		}
-		return head;
 	}
 }
