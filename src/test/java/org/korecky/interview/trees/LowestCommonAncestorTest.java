@@ -53,13 +53,13 @@ class LowestCommonAncestorTest {
 		//   6  7
 
 
-		assertEquals(0, LowestCommonAncestor.lca(head1, 1, 5));
-		assertEquals(1, LowestCommonAncestor.lca(head1, 3, 1));
-		assertEquals(1, LowestCommonAncestor.lca(head1, 1, 4));
-		assertEquals(0, LowestCommonAncestor.lca(head1, 0, 5));
-		assertEquals(5, LowestCommonAncestor.lca(head2, 4, 7));
-		assertEquals(3, LowestCommonAncestor.lca(head2, 3, 3));
-		assertEquals(1, LowestCommonAncestor.lca(head2, 8, 7));
+		assertEquals(0, LowestCommonAncestor.lca(head1, 1, 5).getValue());
+		assertEquals(1, LowestCommonAncestor.lca(head1, 3, 1).getValue());
+		assertEquals(1, LowestCommonAncestor.lca(head1, 1, 4).getValue());
+		assertEquals(0, LowestCommonAncestor.lca(head1, 0, 5).getValue());
+		assertEquals(5, LowestCommonAncestor.lca(head2, 4, 7).getValue());
+		assertEquals(3, LowestCommonAncestor.lca(head2, 3, 3).getValue());
+		assertEquals(1, LowestCommonAncestor.lca(head2, 8, 7).getValue());
 		assertEquals(null, LowestCommonAncestor.lca(head2, 3, 0));
 	}
 }
